@@ -15,6 +15,8 @@
     <description>Learning Spring Boot</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>14</java.version>
         <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
         <kotlin.version>1.4.0</kotlin.version>
