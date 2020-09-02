@@ -1,5 +1,6 @@
 package com.barbulescu.springcloudcontractclient;
 
+import com.barbulescu.springcloudcontractclient.rest.HelloClient;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
