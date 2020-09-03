@@ -1,11 +1,13 @@
 package com.barbulescu.springcloudcontractclient.rest;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-public class HelloClient {
+@Component
+public class HelloRestClient {
     private final WebClient webclient;
 
-    public HelloClient(WebClient webclient) {
+    public HelloRestClient(WebClient webclient) {
         this.webclient = webclient;
     }
 

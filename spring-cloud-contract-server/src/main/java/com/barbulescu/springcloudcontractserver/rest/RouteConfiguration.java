@@ -1,5 +1,6 @@
 package com.barbulescu.springcloudcontractserver.rest;
 
+import com.barbulescu.springcloudcontractserver.HelloService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.function.RouterFunction;

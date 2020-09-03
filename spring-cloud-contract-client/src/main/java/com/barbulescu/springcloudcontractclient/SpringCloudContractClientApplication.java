@@ -1,6 +1,7 @@
 package com.barbulescu.springcloudcontractclient;
 
-import com.barbulescu.springcloudcontractclient.rest.HelloClient;
+import com.barbulescu.springcloudcontractclient.jms.HelloJmsClient;
+import com.barbulescu.springcloudcontractclient.rest.HelloRestClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,10 +12,14 @@ import static org.springframework.boot.WebApplicationType.NONE;
 @SpringBootApplication
 public class SpringCloudContractClientApplication {
 
-	private final HelloClient helloClient;
+	private final HelloRestClient helloRestClient;
+	private final HelloJmsClient helloJmsClient;
 
-	public SpringCloudContractClientApplication(HelloClient helloClient) {
-		this.helloClient = helloClient;
+	public SpringCloudContractClientApplication(
+			HelloRestClient helloRestClient,
+			HelloJmsClient helloJmsClient) {
+		this.helloRestClient = helloRestClient;
+		this.helloJmsClient = helloJmsClient;
 	}
 
 	public static void main(String[] args) {
@@ -25,7 +30,7 @@ public class SpringCloudContractClientApplication {
 
 	@PostConstruct
 	void postConstruct() {
-		System.out.println(helloClient.sayHello("Marius"));
+		System.out.println(helloJmsClient.sayHello("Marius"));
 	}
 
 }

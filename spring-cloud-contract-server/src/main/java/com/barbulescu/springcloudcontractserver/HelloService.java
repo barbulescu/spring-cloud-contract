@@ -1,4 +1,4 @@
-package com.barbulescu.springcloudcontractserver.rest;
+package com.barbulescu.springcloudcontractserver;
 
 import org.springframework.stereotype.Component;
 

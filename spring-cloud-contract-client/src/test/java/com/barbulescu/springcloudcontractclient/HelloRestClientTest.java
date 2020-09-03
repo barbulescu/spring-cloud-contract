@@ -1,6 +1,6 @@
 package com.barbulescu.springcloudcontractclient;
 
-import com.barbulescu.springcloudcontractclient.rest.HelloClient;
+import com.barbulescu.springcloudcontractclient.rest.HelloRestClient;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,10 @@ import static org.springframework.cloud.contract.stubrunner.spring.StubRunnerPro
 @AutoConfigureStubRunner(stubsMode = LOCAL, ids = "com.barbulescu:spring-cloud-contract-server")
 @DirtiesContext
 @ContextConfiguration(classes = TestWebClientConfiguration.class)
-public class HelloClientTest {
+public class HelloRestClientTest {
 
     @Autowired
-    private HelloClient client;
+    private HelloRestClient client;
 
     @Test
     void clientSide() {

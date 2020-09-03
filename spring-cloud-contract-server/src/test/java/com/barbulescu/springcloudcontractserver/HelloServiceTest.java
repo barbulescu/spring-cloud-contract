@@ -1,6 +1,5 @@
 package com.barbulescu.springcloudcontractserver;
 
-import com.barbulescu.springcloudcontractserver.rest.HelloService;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
