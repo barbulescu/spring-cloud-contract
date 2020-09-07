@@ -1,5 +1,6 @@
-package com.barbulescu.springcloudcontractserver;
+package com.barbulescu.springcloudcontractserver.rest;
 
+import com.barbulescu.springcloudcontractserver.HelloService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = MOCK)
 @AutoConfigureMockMvc
 @AutoConfigureStubRunner(stubsMode = LOCAL)
-public class HelloServiceIntegrationTest {
+public class HelloControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

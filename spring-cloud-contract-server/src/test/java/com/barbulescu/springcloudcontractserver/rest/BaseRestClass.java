@@ -1,6 +1,6 @@
-package com.barbulescu.springcloudcontractserver;
+package com.barbulescu.springcloudcontractserver.rest;
 
-import com.barbulescu.springcloudcontractserver.rest.HelloController;
+import com.barbulescu.springcloudcontractserver.HelloService;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @AutoConfigureMessageVerifier
-public abstract class BaseClass {
+public abstract class BaseRestClass {
 
     @Autowired
     private HelloController helloController;

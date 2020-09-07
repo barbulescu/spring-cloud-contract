@@ -1,21 +1,20 @@
 package com.barbulescu.springcloudcontractclient;
 
+import com.barbulescu.springcloudcontractclient.config.TestWebClientConfig;
 import com.barbulescu.springcloudcontractclient.rest.HelloRestClient;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 import static org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties.StubsMode.LOCAL;
 
-@SpringBootTest(webEnvironment = NONE, properties = {"spring.main.allow-bean-definition-overriding=true"})
+@ExtendWith(SpringExtension.class)
 @AutoConfigureStubRunner(stubsMode = LOCAL, ids = "com.barbulescu:spring-cloud-contract-server")
-@DirtiesContext
-@ContextConfiguration(classes = TestWebClientConfiguration.class)
+@ContextConfiguration(classes = {TestWebClientConfig.class, HelloRestClient.class})
 public class HelloRestClientTest {
 
     @Autowired

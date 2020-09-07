@@ -23,7 +23,6 @@
         <kotlin-script-runtime.version>1.4.0</kotlin-script-runtime.version>
         <spring-cloud-contract-maven-plugin.version>2.2.4.RELEASE</spring-cloud-contract-maven-plugin.version>
         <rest-assured.version>4.3.1</rest-assured.version>
-        <!--        <artemis.version>2.14.0</artemis.version>-->
     </properties>
 
     <dependencies>
@@ -119,10 +118,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
@@ -188,7 +183,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <baseClassForTests>com.barbulescu.springcloudcontractserver.BaseClass</baseClassForTests>
+                    <baseClassForTests>com.barbulescu.springcloudcontractserver.rest.BaseRestClass</baseClassForTests>
                     <testFramework>JUNIT5</testFramework>
                     <!--                    <testMode>WEBTESTCLIENT</testMode>-->
                 </configuration>

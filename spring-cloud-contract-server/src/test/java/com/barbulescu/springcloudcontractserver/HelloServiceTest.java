@@ -12,7 +12,8 @@ class HelloServiceTest {
     @Test
     void normal() {
         String response = service.sayHello("abc");
-        assertThat(response).isEqualTo("Hello abc!");
+        assertThat(response)
+                .isEqualTo("Hello abc!");
     }
 
     @Test

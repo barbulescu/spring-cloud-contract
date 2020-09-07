@@ -2,10 +2,10 @@ package com.barbulescu.springcloudcontractclient;
 
 import com.barbulescu.springcloudcontractclient.jms.HelloJmsClient;
 import com.barbulescu.springcloudcontractclient.rest.HelloRestClient;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.annotation.PostConstruct;
+import org.springframework.context.annotation.Bean;
 
 import static org.springframework.boot.WebApplicationType.NONE;
 
@@ -28,9 +28,12 @@ public class SpringCloudContractClientApplication {
 		app.run(args);
 	}
 
-	@PostConstruct
-	void postConstruct() {
-		System.out.println(helloJmsClient.sayHello("Marius"));
+	@Bean
+	ApplicationRunner jmsRunner() {
+		return args -> System.out.println(helloJmsClient.sayHello("Marius"));
 	}
-
+	@Bean
+	ApplicationRunner restRunner() {
+		return args -> System.out.println(helloRestClient.sayHello("Marius"));
+	}
 }
