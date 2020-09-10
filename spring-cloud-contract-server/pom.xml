@@ -60,14 +60,9 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-web-test-client</artifactId>
-            <version>4.3.1</version>
+            <version>${rest-assured.version}</version>
             <scope>test</scope>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -95,7 +90,11 @@
             <artifactId>rest-assured-common</artifactId>
             <version>${rest-assured.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-contract-spec-kotlin</artifactId>
+            <version>${spring-cloud-contract-maven-plugin.version}</version>
+        </dependency>
 
     </dependencies>
 
@@ -183,9 +182,17 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <baseClassForTests>com.barbulescu.springcloudcontractserver.rest.BaseRestClass</baseClassForTests>
+                    <baseClassMappings>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*jms.*</contractPackageRegex>
+                            <baseClassFQN>com.barbulescu.springcloudcontractserver.jms.BaseJms</baseClassFQN>
+                        </baseClassMapping>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*rest.*</contractPackageRegex>
+                            <baseClassFQN>com.barbulescu.springcloudcontractserver.rest.BaseRest</baseClassFQN>
+                        </baseClassMapping>
+                    </baseClassMappings>
                     <testFramework>JUNIT5</testFramework>
-                    <!--                    <testMode>WEBTESTCLIENT</testMode>-->
                 </configuration>
             </plugin>
         </plugins>

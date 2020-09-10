@@ -17,7 +17,7 @@ public class HelloJmsClient {
 
     public String sayHello(String name) {
         try {
-            jmsTemplate.send("hello-request", session -> session.createTextMessage("Marius"));
+            jmsTemplate.send("hello-request", session -> session.createTextMessage(name));
             ActiveMQTextMessage response = (ActiveMQTextMessage) jmsTemplate.receive("hello-response");
             return response.getText();
         } catch (JMSException e) {

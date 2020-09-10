@@ -9,11 +9,14 @@ import org.springframework.cloud.contract.verifier.messaging.boot.AutoConfigureM
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
 import static org.mockito.Mockito.when;
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.MOCK;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
+@SpringBootTest(
+        webEnvironment = MOCK,
+        classes = {HelloController.class}
+)
 @AutoConfigureMessageVerifier
-public abstract class BaseRestClass {
+public abstract class BaseRest {
 
     @Autowired
     private HelloController helloController;

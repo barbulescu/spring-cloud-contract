@@ -1,4 +1,4 @@
-package com.barbulescu.springcloudcontractclient.config;
+package com.barbulescu.springcloudcontractclient.rest;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerPort;
